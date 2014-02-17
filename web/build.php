@@ -70,6 +70,6 @@ do {
 file_put_contents($configFile, json_encode($config, JSON_PRETTY_PRINT));
 
 umask(0);
-system('cd ' . $target . '; COMPOSER_HOME=' . $composerHome . ' php bin/satis -n -q build config.json web/', $exitCode);
+system('cd ' . $target . '; COMPOSER_HOME=' . $composerHome . ' php bin/satis -n --skip-errors -q build config.json web/', $exitCode);
 
 exit($exitCode);
